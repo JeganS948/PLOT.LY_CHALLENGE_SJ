@@ -42,7 +42,7 @@ function createBarChart(selectedID ) {
         var otuId = idValues.map(row => "OTU " + row.toString());
         var otuLabels = selectedData.otu_labels.slice(0,10).reverse();
 
-        // Create trace varibale for the plot
+        // Create trace varibale for the horizatal bar chart
         var trace = {
             x: sampleValues,
             y: otuId,
@@ -53,4 +53,21 @@ function createBarChart(selectedID ) {
 
         //Create data variable
         var data = [trace];
+
+        // create layout variable to set horizantal bar chart layout
+        var layout = {
+            title: "Top 10 OTU",
+            yaxis:{
+                tickmode:"linear",
+            },
+            margin: {
+                l: 100,
+                r: 100,
+                t: 30,
+                b: 20
+            }
+        };
+
+        // Create the bar chart
+        Plotly.newPlot("bar", data0, layout0);
 };
