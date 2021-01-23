@@ -26,7 +26,7 @@ function optionChnaged(sampleID) {
     displayMetadata(sampleID);
 }
 
-// Create Bar plot
+// Create bar chart
 function createBarChart(selectedID ) {
     console.log(selectedID.toString());
     // Use d3.JSON to fetch data from JSON file
@@ -70,4 +70,6 @@ function createBarChart(selectedID ) {
 
         // Create the bar chart
         Plotly.newPlot("bar", data0, layout0);
+
+// Create bubble chart
 };
