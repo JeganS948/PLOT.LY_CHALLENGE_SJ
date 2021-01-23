@@ -41,4 +41,16 @@ function createBarChart(selectedID ) {
         var idValues = selectedData.otu_ids.slice(0,10).reverse();
         var otuId = idValues.map(row => "OTU " + row.toString());
         var otuLabels = selectedData.otu_labels.slice(0,10).reverse();
-}
+
+        // Create trace varibale for the plot
+        var trace = {
+            x: sampleValues,
+            y: otuId,
+            text: otuLabels,
+            type:"bar",
+            orientation: "h",
+        };
+
+        //Create data variable
+        var data = [trace];
+};
