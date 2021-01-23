@@ -36,9 +36,9 @@ function createBarChart(selectedID ) {
         // Console log selected data
         console.log(selectedData);
 
-        // Retrieve first 25 of sample values 
-        var revValues = selectedData.sample_values.slice(0,25).reverse();
-        var otuIDs = selectedData.otu_ids.slice(0,25).reverse();
-        var strRevIDs = otuIDs.map(row => "OTU " + row.toString());
-        var revLabels = selectedData.otu_labels.slice(0,25).reverse();
+        // Retrieve top 10 of sample values and reverse for the plot.ly
+        var sampleValues = selectedData.sample_values.slice(0,10).reverse();
+        var idValues = selectedData.otu_ids.slice(0,10).reverse();
+        var otuId = idValues.map(row => "OTU " + row.toString());
+        var otuLabels = selectedData.otu_labels.slice(0,10).reverse();
 }
