@@ -120,3 +120,11 @@ function displayMetadata(selectedData) {
     // Store into variable and console log
     var metadata = data.metadata.filter(object => object.id == selectedID)[0];
     console.log(metadata);
+
+    // Display key-value pair from metadata
+    Object.entries(metadata).forEach(([key, value]) => {
+        // Store key into variable
+        var panel = dataPanel.append("h6").text(`${key}: ${value}`);
+    });
+};
+init();
