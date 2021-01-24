@@ -116,4 +116,3 @@ function displayMetadata(selectedData)
     var dataPanel = d3.select("#sample-metadata");
     // Clear panel data
     dataPanel.html("");
-
