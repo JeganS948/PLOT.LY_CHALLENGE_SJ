@@ -109,3 +109,11 @@ function createBubbleChart(selectedID) {
         Plotly.newPlot("bubble", data1, layout1);
     };
 };
+
+// Retireve metadata
+function displayMetadata(selectedData)
+    // Display metadata and retrieve REF panel
+    var dataPanel = d3.select("#sample-metadata");
+    // Clear panel data
+    dataPanel.html("");
+
