@@ -72,4 +72,23 @@ function createBarChart(selectedID ) {
         Plotly.newPlot("bar", data0, layout0);
 
 // Create bubble chart
-};
+function createBubbleChart(selectedID) {
+    // Use d3.JSON to fetch data from JSON file
+    d3.json("data/samples.json").then((data) => {
+        var samples = data.samples;
+        var selectedData = samples.filter(object => object.id == selectedID)[0];
+        var otuIDstr = selectedData.otu_ids.map(String);
+        // Console log selected data
+        console.log(otuIDstr);
+
+        // Create trace varibale for bubble chart
+        var trace_x = {
+            x: samples.otu_ids,
+            y: samples.sample_values,
+            mode: "markers",
+            marker: {
+                size: samples.sample_values,
+                color: samples.otu_ids
+            },
+            text: samples.otu_labels
+        };
