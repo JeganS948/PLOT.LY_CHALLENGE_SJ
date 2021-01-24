@@ -95,3 +95,10 @@ function createBubbleChart(selectedID) {
 
         //Create data variable
         var data = [trace_x];
+
+        // create layout variable to set horizantal bubble chart layout
+        var layout = {
+            xaxis:{title: "OTU ID"},
+            height: 600,
+            width: 1300
+        };
