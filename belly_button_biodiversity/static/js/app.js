@@ -51,11 +51,11 @@ function createBarChart(selectedID ) {
             orientation: "h",
         };
 
-        //Create data variable
-        var data = [trace];
+        // Create data variable
+        var data0 = [trace];
 
         // create layout variable to set horizantal bar chart layout
-        var layout = {
+        var layout0 = {
             title: "Top 10 OTU",
             yaxis:{
                 tickmode:"linear",
@@ -70,6 +70,8 @@ function createBarChart(selectedID ) {
 
         // Create the bar chart
         Plotly.newPlot("bar", data0, layout0);
+    };
+};
 
 // Create bubble chart
 function createBubbleChart(selectedID) {
@@ -93,12 +95,17 @@ function createBubbleChart(selectedID) {
             text: samples.otu_labels
         };
 
-        //Create data variable
-        var data = [trace_x];
+        // Create data variable
+        var data1 = [trace_x];
 
-        // create layout variable to set horizantal bubble chart layout
-        var layout = {
+        // Create layout variable to set horizantal bubble chart layout
+        var layout1 = {
             xaxis:{title: "OTU ID"},
             height: 600,
             width: 1300
         };
+
+        // Create the bubble chart
+        Plotly.newPlot("bubble", data1, layout1);
+    };
+};
