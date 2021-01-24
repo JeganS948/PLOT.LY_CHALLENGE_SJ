@@ -111,8 +111,12 @@ function createBubbleChart(selectedID) {
 };
 
 // Retireve metadata
-function displayMetadata(selectedData)
+function displayMetadata(selectedData) { 
     // Display metadata and retrieve REF panel
     var dataPanel = d3.select("#sample-metadata");
     // Clear panel data
     dataPanel.html("");
+
+    // Store into variable and console log
+    var metadata = data.metadata.filter(object => object.id == selectedID)[0];
+    console.log(metadata);
