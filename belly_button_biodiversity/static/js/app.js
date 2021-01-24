@@ -92,3 +92,6 @@ function createBubbleChart(selectedID) {
             },
             text: samples.otu_labels
         };
+
+        //Create data variable
+        var data = [trace_x];
