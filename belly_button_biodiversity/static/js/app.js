@@ -6,7 +6,7 @@ function init() {
     // Use d3.JSON to fetch data from JSON file
     d3.json("data/samples.json").then((data)=> {
         sampleData.names.forEach((sample)=> {
-            dropdown.append("option").text(sample.property("value", sample);
+            dropdown.append("option").text(sample.property("value", sample)
         });
         // Call variable and Console log sample data
         var sampleID = dropdown.property("value");
@@ -18,7 +18,7 @@ function init() {
     });
 }
 
-// Retrieve data based on sa
+// Retrieve data based on sample data
 function optionChnaged(sampleID) {
     console.log(sampleID);
     createBarChart(sampleID);
@@ -71,7 +71,7 @@ function createBarChart(selectedID ) {
         // Create the bar chart
         Plotly.newPlot("bar", data0, layout0);
     };
-};
+}
 
 // Create bubble chart
 function createBubbleChart(selectedID) {
@@ -108,7 +108,7 @@ function createBubbleChart(selectedID) {
         // Create the bubble chart
         Plotly.newPlot("bubble", data1, layout1);
     };
-};
+}
 
 // Retireve metadata
 function displayMetadata(selectedData) { 
@@ -126,5 +126,7 @@ function displayMetadata(selectedData) {
         // Store key into variable
         var panel = dataPanel.append("h6").text(`${key}: ${value}`);
     });
-};
+}
+
+// Initialize browser
 init();
